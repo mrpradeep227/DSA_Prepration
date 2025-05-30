@@ -15,33 +15,26 @@ class Node {
     public class K_Position_LinkedList {
 
         public static Node insertAtKthPosition(Node head, int data, int k) {
-
-            Node newNode= new Node(data);
-            if(k<0){
-                throw  new IllegalArgumentException("K can not be negative");
-            }
-            if(k==0){
-                newNode.next=head;
-                return newNode;
-            }
-            // Traverse to (k-1)-th node
+            Node newNode = new Node(data);
             Node current = head;
             int position = 0;
 
+            if (k < 0) {
+                throw new IllegalArgumentException("K can not be negative");
+            }
+            if (k == 0) {
+                newNode.next = head;
+                return newNode;
+            }
             while (current != null && position < k - 1) {
                 current = current.next;
                 position++;
             }
-
-            // Case 2: k exceeds list length
             if (current == null) {
                 throw new IndexOutOfBoundsException("Position exceeds linked list length");
             }
-
-            // Insert the node
             newNode.next = current.next;
             current.next = newNode;
-
             return head;
         }
 
@@ -60,9 +53,9 @@ class Node {
         head.next = new Node(20);
         head.next.next = new Node(30);
 
-        head = insertAtKthPosition(head, 15, 1); // between 10 and 20
-        head = insertAtKthPosition(head, 5, 0);  // at head
-        head = insertAtKthPosition(head, 40, 5); // at end
+        head = insertAtKthPosition(head, 15, 1);
+        head = insertAtKthPosition(head, 5, 0);
+        head = insertAtKthPosition(head, 40, 5);
 
         printList(head);
     }
