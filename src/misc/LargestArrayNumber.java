@@ -1,3 +1,4 @@
+package misc;
 public class LargestArrayNumber {
     public static void main(String[] args) {
         int[] arr = {2, 5, 7, 10};

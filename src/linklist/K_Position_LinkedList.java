@@ -1,6 +1,4 @@
-package linklist;
-
-
+package linklist; 
 public class K_Position_LinkedList {
 
     public static Node insertAtKthPosition(Node head, int data, int k) {
@@ -45,5 +43,14 @@ public class K_Position_LinkedList {
         head = insertAtKthPosition(head, 40, 5);
 
         printList(head);
+    }
+ 
+}
+   class Node {
+    int data;
+    Node next;
+    Node(int new_data) {
+        this.data = new_data;
+        this.next = null;
     }
 }

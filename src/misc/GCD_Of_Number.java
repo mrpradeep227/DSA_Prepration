@@ -1,3 +1,4 @@
+package misc;
 public class GCD_Of_Number {
     public static void main(String[] args) {
         int a = 45;
